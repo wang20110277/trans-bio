@@ -1,0 +1,10 @@
+numpy
+pandas
+biopython
+torch
+tensorflow
+scikit-learn
+matplotlib
+seaborn
+pyyaml
+Flask
