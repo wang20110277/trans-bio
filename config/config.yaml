@@ -1,6 +1,7 @@
-input_shape: [200, 4]  # 根据 HBV 数据调整输入形状
-optimizer: "adam"      # 优化器
-loss: "binary_crossentropy"  # 损失函数
-metrics: "accuracy"    # 评估指标
-epochs: 10             # 训练轮数
-batch_size: 32         # 批量大小
+# 假设添加结构特征后输入形状变化，需要根据实际情况调整
+input_shape: [300, 4]  # 新的输入形状
+optimizer: "adam"
+loss: "binary_crossentropy"
+metrics: "accuracy"
+epochs: 10
+batch_size: 32

@@ -53,7 +53,7 @@ class PositionalEncoding(layers.Layer):
         return inputs + self.pos_encoding[:, : tf.shape(inputs)[1], :]
 
 def build_transformer_model(
-    input_shape,
+    input_shape,  # 新的输入形状包含序列和结构特征
     num_heads=8,
     embed_dim=64,
     ff_dim=256,
