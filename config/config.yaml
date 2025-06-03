@@ -1,7 +1,25 @@
-# 假设添加结构特征后输入形状变化，需要根据实际情况调整
-input_shape: [300, 4]  # 新的输入形状
-optimizer: "adam"
-loss: "binary_crossentropy"
-metrics: "accuracy"
-epochs: 10
-batch_size: 32
+# 模型配置
+model:
+  type: "cnn"  # 或 "transformer"
+  input_shape: [300, 4]
+  optimizer: "adam"
+  loss: "binary_crossentropy"
+  metrics: "accuracy"
+
+# 训练配置
+training:
+  epochs: 10
+  batch_size: 32
+  validation_split: 0.1
+  test_split: 0.2
+
+# 数据配置
+data:
+  raw_path: "data/raw/"
+  processed_path: "data/processed/"
+  predictions_path: "data/predictions/"
+
+# 日志配置
+logging:
+  level: "INFO"
+  file: "logs/app.log"
