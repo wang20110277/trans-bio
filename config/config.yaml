@@ -1,4 +1,4 @@
-input_shape: [100, 4]  # 输入形状
+input_shape: [200, 4]  # 根据 HBV 数据调整输入形状
 optimizer: "adam"      # 优化器
 loss: "binary_crossentropy"  # 损失函数
 metrics: "accuracy"    # 评估指标

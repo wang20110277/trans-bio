@@ -5,6 +5,8 @@ import tensorflow as tf
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
 from utils.data_processing import read_fasta, one_hot_encode
 from models.cnn_model import build_cnn_model
+from utils.data_processing import load_hbv_data
+from models.cnn_model import build_hbv_cnn_model
 
 # 设置随机种子以确保可重复性
 tf.random.set_seed(42)
@@ -47,15 +49,15 @@ def split_data(X, y, test_size=0.2, val_size=0.1):
 
 def train_model(config):
     """训练模型"""
-    # 加载数据
+    # 加载 HBV 数据
     data_dir = os.path.join("data")
-    X, y = load_data(data_dir)
+    X, y = load_hbv_data(data_dir)
 
     # 划分数据集
     X_train, X_val, X_test, y_train, y_val, y_test = split_data(X, y, test_size=0.2, val_size=0.1)
 
-    # 构建模型
-    model = build_cnn_model(input_shape=config["input_shape"])
+    # 构建 HBV 模型
+    model = build_hbv_cnn_model(input_shape=config["input_shape"])
     model.compile(optimizer=config["optimizer"], loss=config["loss"], metrics=[config["metrics"]])
 
     # 设置回调函数
