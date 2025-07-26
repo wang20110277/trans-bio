@@ -8,4 +8,4 @@ matplotlib
 seaborn
 pyyaml
 Flask
-alphafold3  # 假设存在该包名，实际可能需要替换为正确的包名
+alphafold3
